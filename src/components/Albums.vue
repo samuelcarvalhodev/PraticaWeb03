@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div >
       <ul>
-          <div v-for="album in albums" :key="album.id">
+          <div v-for="album in albums" :key="album.id" >
               <li>
                   <h1>Title: </h1>
                   <p>{{ album.title }}</p>

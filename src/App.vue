@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Prática 03 de Web</h1>
-    <div class="body" >
+    <div class="body">
       <Todos></Todos>
       <hr>
       <Albums></Albums>
@@ -12,19 +12,15 @@
 </template>
 
 <script>
-import Users from './components/Users.vue';
 import Todos from './components/Todos.vue';
 import Albums from './components/Albums.vue';
-import Comments from './components/Comments.vue';
 import Posts from './components/Posts.vue';
 
 export default {
    name: "App",
    components:{
-    Users,
     Todos,
     Albums,
-    Comments,
     Posts
    }
 }
