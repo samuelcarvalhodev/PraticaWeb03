@@ -1,20 +1,24 @@
 <template>
-  <div>
+  <div >
       <ul>
           <div v-for="todo in todos" :key="todo.id">
-              <div v-if="todo.userId == '2'">
-                  <div v-if="todo.completed == true">
-                    <li>
-                        <p><strong>UserId: </strong> {{ todo.userId }}</p>
-                        <p><strong>Id: </strong> {{ todo.id }}</p>
-                        <p><strong>Title: </strong> {{ todo.title }}</p>
+              <li v-if="todo.completed === true">
+
+                  <h1>Title todo: </h1>
+                  <p> {{ todo.title }} </p>
+                  <div >
+                      <!-- //v-for="user in users " :key="user.id" -->
+                    <div >
+                        <div v-if=" todo.userId === users.id ">
+                        <p><strong>User: </strong> {{ user.name }} </p>
+                        </div>
                         <p><strong>Completed: </strong> {{ todo.completed }}</p>
-                    </li>
                     </div>
-              </div>
+                    </div>
+              </li>
           </div>
       </ul>
-      <button @click="fetchTodos">Todos</button>
+      <button @click="triggerMethods">Todos</button>
  </div>
 </template>
 
@@ -25,15 +29,26 @@ export default
     data() {
         return {
             todos: [],
-            baseURI: "https://jsonplaceholder.typicode.com/todos"   
+            users: [],
+            todosURI: "https://jsonplaceholder.typicode.com/todos",
+            userURI: "https://jsonplaceholder.typicode.com/users",   
             };
         },
         methods: {
             fetchTodos: function() {
-                this.$http.get(this.baseURI).then((result) => {
+                this.$http.get(this.todosURI).then((result) => {
                     this.todos = result.data;    
                 });
             },
+            fetchUser: function() {
+                this.$http.get(this.userURI).then((result) => {
+                    this.users = result.data;
+                });
+            },
+            triggerMethods: function(){
+                this.fetchUser();
+                this.fetchTodos();
+            }
         },
 };
 </script>

@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <Users></Users>
-    <Todos></Todos>
-    <Photos></Photos>
-    <Comments></Comments>
-    <Posts></Posts>
+    <h1>Prática 03 de Web</h1>
+    <div class="body" >
+      <Todos></Todos>
+      <hr>
+      <Albums></Albums>
+      <hr>
+      <Posts></Posts>
+    </div>
   </div>
 </template>
 
 <script>
 import Users from './components/Users.vue';
 import Todos from './components/Todos.vue';
-import Photos from './components/Photos.vue';
+import Albums from './components/Albums.vue';
 import Comments from './components/Comments.vue';
 import Posts from './components/Posts.vue';
 
@@ -20,7 +23,7 @@ export default {
    components:{
     Users,
     Todos,
-    Photos,
+    Albums,
     Comments,
     Posts
    }
@@ -28,13 +31,16 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  
+  color: #32264D;
+ 
+ 
+
 }
 
 #app button {
@@ -42,7 +48,16 @@ export default {
   height: 30px;
   margin-bottom: 10px;
   border-radius: 5px;
-  
+  border: none;
+  background-color: #04D361;
+  transition: background-color, width, height 0.3s;
+}
+
+#app button:hover{
+  cursor: pointer;
+  background-color: #04BF58;
+  height: 35px;
+  width: 125px;
 }
 
 #nav {
@@ -56,6 +71,17 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+#app .body{
+  /* border: 1px solid #000; */
+  display: flex;
+  background-color: #f7f7f7;
+  height: 100vh;
+}
+
+hr{
+  height: 10%;
 }
 
 li {
