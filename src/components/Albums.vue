@@ -17,7 +17,7 @@
               </li>
           </div>
       </ul>
-      <button @click="triggerMethods">Photos</button>
+      <button @click="triggerMethods">Albums</button>
  </div>
 </template>
 
