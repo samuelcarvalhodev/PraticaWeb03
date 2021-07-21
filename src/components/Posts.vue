@@ -12,7 +12,7 @@
                         <li v-if="post.userId === user.id">
                             <p><strong>Title: </strong> {{ post.title }}</p>
                             <p><strong>Body: </strong> {{ post.body }}</p>
-                            <h3>Comentarios:</h3>
+                            <h3>Comments:</h3>
                             <ul>
                                 <div v-for="comment in comments" :key="comment.id">
                                     <li v-if="comment.postId === post.id">
@@ -80,20 +80,5 @@ export default {
 </script>
 
 <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 </style>
